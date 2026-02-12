@@ -1093,13 +1093,33 @@ button {
     margin: 0 auto;
 }
 
-/* MAPA */
+/* Layout padrão (desktop) */
+.contato__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+}
 
+/* MAPA */
 .contato__map {
     border-radius: var(--border-radius-xl);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     height: 500px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .contato__content {
+        grid-template-columns: 1fr; /* empilha */
+    }
+
+    .contato__map {
+        height: 300px; /* altura menor no mobile */
+        margin-top: 1rem;
+    }
 }
 
 /* ===================================
@@ -1236,6 +1256,26 @@ button {
     color: var(--text-light);
     font-size: var(--font-size-sm);
     margin: var(--spacing-xs) 0;
+}
+
+@media (max-width: 768px) {
+
+    .footer-section {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        margin-top: 1rem;
+    }
+
+    .footer-social a {
+        font-size: 22px;
+    }
 }
 
 /* ===================================
